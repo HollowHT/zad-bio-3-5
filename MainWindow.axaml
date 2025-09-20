@@ -1,0 +1,48 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:bios_vil3"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="bios_vil3.MainWindow"
+        x:DataType="local:MainWindow"
+        Title="bios_vil3">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <DataGrid x:Name="EmployeeGrid" 
+                  Grid.Row="0" 
+                  ItemsSource="{Binding Employees}" 
+                  AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Imie" Binding="{Binding Imie}"/>
+                <DataGridTextColumn Header="Nazwisko" Binding="{Binding Nazwisko}"/>
+                <DataGridTextColumn Header="Wiek" Binding="{Binding Wiek}"/>
+                <DataGridTextColumn Header="Zatrudnienie" Binding="{Binding Pracapracajaniebyctakiork}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        
+        <StackPanel Orientation="Vertical" Grid.Row="1" HorizontalAlignment="Center" Margin="10">
+            
+            <StackPanel Orientation="Horizontal">
+            <Button x:Name="AddButton" Content="Dodaj" Margin="5" Click="AddButton_Click"/>
+            <Button x:Name="RemoveButton" Content="Usuń" Margin="5" Click="RemoveButton_Click"/>
+            <Button x:Name="SaveCsvButton" Content="Zapis do .csv" Margin="5" Click="SaveCsvButton_Click"/>
+            <Button x:Name="LoadCsvButton" Content="Odczyt z .csv" Margin="5" Click="LoadCsvButton_Click"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal">
+            <Button x:Name="SaveXmlButton" Content="Zapis do XML" Margin="5" Click="SaveXmlButton_Click"/>
+            <Button x:Name="SaveJSONButton" Content="Zapis do JSON" Margin="5" Click="SaveJSONButton_Click" />
+            <Button x:Name="LoadXmlButton" Content="Odczyt z XML" Margin="5" Click="LoadXmlButton_Click"/>
+            <Button x:Name="LoadJSONButton" Content="Odczyt z JSON" Margin="5" Click="LoadJsonButton_Click"/>
+            </StackPanel>
+            
+        </StackPanel>
+            
+    </Grid>
+</Window>
